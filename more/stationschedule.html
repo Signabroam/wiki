@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Signabroam Station Scheduler</title>
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Signabroam Station Scheduler" />
+    <meta property="og:description" content="Station Scheduler for Global Radio Broadcasts." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://dx.signabroam.ovh/radio/schedule/" />
+    <meta property="og:image" content="http://dx.signabroam.ovh/assets/img/og-image.png" />
+
+    <!-- Favicon & Styles -->
+    <link rel="icon" type="image/x-icon" href="http://dx.signabroam.ovh/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- <link rel="stylesheet" href="./main.css"> -->
+    
+    <style>
+        .language-selector {
+            display: flex;
+            gap: 0.5em;
+            justify-content: center;
+            margin-top: 1em;
+        }
+        
+        .lang-btn {
+            background: linear-gradient(135deg, rgba(0, 200, 255, 0.15) 0%, rgba(100, 50, 200, 0.1) 100%);
+            border: 2px solid rgba(0, 255, 200, 0.2);
+            color: black;
+            padding: 0.5em 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .lang-btn:hover {
+            border-color: rgba(0, 255, 200, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 200, 255, 0.2);
+        }
+        
+        .lang-btn.sel {
+            background: linear-gradient(135deg, black 0%, #00ddff 100%);
+            border-color: black;
+            color: #0a0e27;
+            box-shadow: 0 8px 25px rgba(0, 255, 204, 0.4);
+            font-weight: 700;
+        }
+
+        /* Search Box Styling */
+        .search-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            border: 2px solid #3366cc;
+            border-radius: 6px;
+            background-color: white;
+            color: #222;
+            transition: all 0.2s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 8px rgba(255, 107, 53, 0.3);
+        }
+
+        .search-box input::placeholder {
+            color: #999;
+        }
+
+        .search-box button {
+            padding: 12px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #3366cc, #6699ff);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .search-box button:hover {
+            box-shadow: 0 4px 12px rgba(51, 102, 204, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .search-box button:active {
+            transform: translateY(0);
+        }
+
+        .search-result-info {
+            margin-bottom: 12px;
+            padding: 10px 16px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #3366cc;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: #555;
+            display: none;
+        }
+
+        .search-result-info.active {
+            display: block;
+        }
+
+        /* Frequency Range Search Box */
+        .freq-range-box {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        .freq-range-box label {
+            font-weight: 600;
+            color: #333;
+            min-width: 100px;
+        }
+
+        .freq-range-box input {
+            width: 120px;
+            padding: 10px 12px;
+            font-size: 0.9rem;
+            border: 2px solid #3366cc;
+            border-radius: 6px;
+            background-color: white;
+            color: #222;
+            transition: all 0.2s ease;
+        }
+
+        .freq-range-box input:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 8px rgba(255, 107, 53, 0.3);
+        }
+
+        .freq-range-box input::placeholder {
+            color: #999;
+        }
+
+        .freq-range-box span {
+            color: #666;
+            font-weight: 600;
+        }
+
+        .freq-range-box button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #6699ff, #3366cc);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-left: auto;
+        }
+
+        .freq-range-box button:hover {
+            box-shadow: 0 4px 12px rgba(51, 102, 204, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .freq-range-box button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+         <div class="header-text">
+            <h1>Signabroam Dx (All Stations Edition)</h1>
+            <p id="schedule-subtitle">📅 Station Scheduler</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/index.html" id="nav-home">Home</a>
+        <a href="#schedule" id="nav-schedule">Schedules</a>
+        <a href="#info" id="nav-info">Info</a>
+    </nav>
+
+    <main style="max-width: 100%; margin: 0; padding: 0;">
+        <section id="schedule">
+            <h2 id="schedule-title">📡 Station Schedule</h2>
+            <div class="schedule"></div>
+        </section>
+
+        <!-- Info Section -->
+        <section id="info" style="margin-top: 2em;">
+            <h3 id="schedule-about">ℹ️ About the Scheduler</h3>
+            <p id="schedule-about-desc">
+                This scheduler displays the programmed radio broadcasts from experimental 
+                and official stations worldwide. Check the UTC times and plan your listening 
+                sessions!
+            </p>
+        </section>
+    </main>
+
+    <script>
+async function loadSchedule() {
+    const scheduleContainer = document.querySelector('.schedule');
+
+    try {
+        const response = await fetch('./sc.json');
+        const data = await response.json();
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'radio-schedule';
+
+        // UTC Clock
+        const clock = document.createElement('div');
+        clock.className = 'utc-clock';
+        clock.innerHTML = `
+            <h3>⏱️ Current UTC Time</h3>
+            <div id="utc-time">--:--:--</div>
+        `;
+        wrapper.appendChild(clock);
+
+        // Expand all entries with their times and days
+        const allEntries = [];
+        data.forEach(entry => {
+            const times = (entry.time || '').split(',').map(t => t.trim());
+            const days = (entry.days || '').split(',').map(d => d.trim());
+            
+            times.forEach(time => {
+                days.forEach(day => {
+                    let startTime = '-';
+                    let endTime = '-';
+                    
+                    // Check if time is a range (e.g., "0000 - 2359")
+                    if (time.includes('-')) {
+                        const timeParts = time.split('-').map(t => t.trim());
+                        if (timeParts.length === 2) {
+                            const startHour = timeParts[0].slice(0, 2);
+                            const startMin = timeParts[0].slice(2) || '00';
+                            const endHour = timeParts[1].slice(0, 2);
+                            const endMin = timeParts[1].slice(2) || '00';
+                            startTime = `${startHour}:${startMin}`;
+                            endTime = `${endHour}:${endMin}`;
+                        }
+                    } else {
+                        // Single time format
+                        const startHour = time.slice(0, 2);
+                        const startMin = time.slice(2) || '00';
+                        startTime = `${startHour}:${startMin}`;
+                    }
+                    
+                    allEntries.push({
+                        freq: (entry.freq || '-').replace(' kHz', '').trim(),
+                        station: entry.station || '-',
+                        site: entry.site || '-',
+                        language: entry.language || '-',
+                        target: entry.target || '-',
+                        startTime: startTime,
+                        endTime: endTime,
+                        day: day,
+                        mode: entry.mode || '-',
+                        com: entry.com || '-'
+                    });
+                });
+            });
+        });
+
+        // Sort by frequency (numeric), then by start time
+        allEntries.sort((a, b) => {
+            const freqA = parseInt(a.freq) || 0;
+            const freqB = parseInt(b.freq) || 0;
+            if (freqA !== freqB) return freqA - freqB;
+            
+            const timeA = a.startTime.replace(':', '');
+            const timeB = b.startTime.replace(':', '');
+            return timeA.localeCompare(timeB);
+        });
+
+        // Create main table
+        const tableContainer = document.createElement('div');
+        tableContainer.className = 'table-container';
+        
+        const table = document.createElement('table');
+        table.className = 'schedule-table';
+        table.innerHTML = `
+            <thead>
+                <tr>
+                    <th>Freq (kHz)</th>
+                    <th>Station</th>
+                    <th>Transmitter Site</th>
+                    <th>Language</th>
+                    <th>Status</th>
+                    <th>Start (UTC)</th>
+                    <th>End (UTC)</th>
+                    <th>Days/Info</th>
+                </tr>
+            </thead>
+        `;
+        const tbody = document.createElement('tbody');
+
+        // Get unique entries (combine same station info)
+        const uniqueEntries = {};
+        allEntries.forEach(entry => {
+            const key = entry.freq + '|' + entry.station + '|' + entry.startTime;
+            if (!uniqueEntries[key]) {
+                uniqueEntries[key] = { ...entry, daysArray: [] };
+            }
+            if (!uniqueEntries[key].daysArray.includes(entry.day)) {
+                uniqueEntries[key].daysArray.push(entry.day);
+            }
+        });
+
+        Object.values(uniqueEntries).forEach(entry => {
+            const tr = document.createElement('tr');
+            
+            // Convert day codes to names
+            const dayNames = {
+                mon: "Mon", tue: "Tue", wed: "Wed", thu: "Thu",
+                fri: "Fri", sat: "Sat", sun: "Sun"
+            };
+            const daysDisplay = entry.daysArray.map(d => dayNames[d] || d).join(', ');
+            
+            tr.innerHTML = `
+                <td class="freq">${entry.freq}</td>
+                <td class="station">${entry.station}</td>
+                <td class="site">${entry.site}</td>
+                <td class="language">${entry.language}</td>
+                <td class="target">${entry.target}</td>
+                <td class="time">${entry.startTime}</td>
+                <td class="time">${entry.endTime}</td>
+                <td class="days">${daysDisplay}${entry.com ? '<br><small>' + entry.com + '</small>' : ''}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        table.appendChild(tbody);
+        tableContainer.appendChild(table);
+        
+        // Create search box AFTER table is populated
+        const searchBox = document.createElement('div');
+        searchBox.className = 'search-box';
+        searchBox.innerHTML = `
+            <input type="text" id="search-input" placeholder="🔍 Search by frequency, station name, language, location, etc..." />
+            <button id="search-btn">Search</button>
+            <button id="clear-btn" style="background: linear-gradient(135deg, #888, #aaa);">Clear</button>
+        `;
+        tableContainer.insertBefore(searchBox, table);
+        
+        // Create frequency range search box
+        const freqRangeBox = document.createElement('div');
+        freqRangeBox.className = 'freq-range-box';
+        freqRangeBox.innerHTML = `
+            <label>🔍 Frequency Range:</label>
+            <input type="number" id="freq-min" placeholder="Min (kHz)" />
+            <span>to</span>
+            <input type="number" id="freq-max" placeholder="Max (kHz)" />
+            <button id="freq-search-btn">Search Range</button>
+            <button id="freq-clear-btn" style="background: linear-gradient(135deg, #888, #aaa);">Clear</button>
+        `;
+        tableContainer.insertBefore(freqRangeBox, table);
+        
+        // Create search result info
+        const searchResultInfo = document.createElement('div');
+        searchResultInfo.className = 'search-result-info';
+        tableContainer.insertBefore(searchResultInfo, table);
+        
+        wrapper.appendChild(tableContainer);
+        scheduleContainer.innerHTML = '';
+        scheduleContainer.appendChild(wrapper);
+        
+        // Now get element references AFTER they're in the DOM
+        setTimeout(() => {
+            const allRows = Array.from(document.querySelectorAll('.schedule-table tbody tr'));
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            const clearBtn = document.getElementById('clear-btn');
+            const freqMinInput = document.getElementById('freq-min');
+            const freqMaxInput = document.getElementById('freq-max');
+            const freqSearchBtn = document.getElementById('freq-search-btn');
+            const freqClearBtn = document.getElementById('freq-clear-btn');
+            
+            if (!searchInput || !searchBtn || !clearBtn) {
+                console.error('Search elements not found');
+                return;
+            }
+            
+            // Text Search function
+            function performSearch() {
+                const query = searchInput.value.toLowerCase().trim();
+                
+                if (!query) {
+                    allRows.forEach(row => {
+                        row.style.display = '';
+                    });
+                    searchResultInfo.classList.remove('active');
+                    return;
+                }
+                
+                let visibleCount = 0;
+                allRows.forEach(row => {
+                    const cells = row.querySelectorAll('td');
+                    const rowText = Array.from(cells).map(cell => cell.textContent.toLowerCase()).join(' ');
+                    
+                    if (rowText.includes(query)) {
+                        row.style.display = '';
+                        visibleCount++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                
+                // Show result info
+                searchResultInfo.classList.add('active');
+                searchResultInfo.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''} for "${query}"`;
+            }
+            
+            // Clear text search function
+            function clearSearch() {
+                searchInput.value = '';
+                allRows.forEach(row => {
+                    row.style.display = '';
+                });
+                searchResultInfo.classList.remove('active');
+            }
+            
+            // Frequency Range Search function
+            function performFreqRangeSearch() {
+                const minFreq = parseFloat(freqMinInput.value);
+                const maxFreq = parseFloat(freqMaxInput.value);
+                
+                if (isNaN(minFreq) && isNaN(maxFreq)) {
+                    allRows.forEach(row => {
+                        row.style.display = '';
+                    });
+                    searchResultInfo.classList.remove('active');
+                    return;
+                }
+                
+                let visibleCount = 0;
+                allRows.forEach(row => {
+                    const freqCell = row.querySelector('.freq');
+                    if (!freqCell) return;
+                    
+                    const freqStr = freqCell.textContent.trim();
+                    const freq = parseFloat(freqStr);
+                    
+                    let isVisible = true;
+                    
+                    // Check min frequency
+                    if (!isNaN(minFreq) && freq < minFreq) {
+                        isVisible = false;
+                    }
+                    
+                    // Check max frequency
+                    if (!isNaN(maxFreq) && freq > maxFreq) {
+                        isVisible = false;
+                    }
+                    
+                    if (isVisible) {
+                        row.style.display = '';
+                        visibleCount++;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                
+                // Show result info
+                searchResultInfo.classList.add('active');
+                let rangeText = '';
+                if (!isNaN(minFreq) && !isNaN(maxFreq)) {
+                    rangeText = `between ${minFreq} and ${maxFreq} kHz`;
+                } else if (!isNaN(minFreq)) {
+                    rangeText = `above ${minFreq} kHz`;
+                } else if (!isNaN(maxFreq)) {
+                    rangeText = `below ${maxFreq} kHz`;
+                }
+                searchResultInfo.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''} for frequencies ${rangeText}`;
+            }
+            
+            // Clear frequency range search function
+            function clearFreqSearch() {
+                freqMinInput.value = '';
+                freqMaxInput.value = '';
+                allRows.forEach(row => {
+                    row.style.display = '';
+                });
+                searchResultInfo.classList.remove('active');
+            }
+            
+            // Add event listeners for text search
+            searchBtn.addEventListener('click', performSearch);
+            clearBtn.addEventListener('click', clearSearch);
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            // Add event listeners for frequency range search
+            if (freqSearchBtn) freqSearchBtn.addEventListener('click', performFreqRangeSearch);
+            if (freqClearBtn) freqClearBtn.addEventListener('click', clearFreqSearch);
+            if (freqMinInput) freqMinInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performFreqRangeSearch();
+                }
+            });
+            if (freqMaxInput) freqMaxInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performFreqRangeSearch();
+                }
+            });
+            
+            console.log('Search initialized with', allRows.length, 'rows');
+        }, 0);
+
+        // --- UTC Clock Update ---
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getUTCHours()).padStart(2, '0');
+            const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+            document.getElementById('utc-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+    } catch (err) {
+        scheduleContainer.innerHTML = `<p style="color: #ff3366; text-align: center; padding: 2em;">Loading Error: ${err.message}</p>`;
+        console.error('Schedule loading error:', err);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadSchedule);
+</script>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            <span id="footer-text">Created by</span> <strong id="footer-studio">Discode Studio</strong>, all rights reserved
+        </p>
+    </footer>
+</body>
+</html>

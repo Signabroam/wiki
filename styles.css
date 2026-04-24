@@ -1,0 +1,584 @@
+/* Signabroam Wiki - Wikipedia + Fandom Style */
+
+:root {
+    --primary-color: #3366cc;
+    --secondary-color: #6699ff;
+    --accent-color: #ff6b35;
+    --text-color: #222;
+    --bg-color: #f8f9fa;
+    --border-color: #d8d8d8;
+    --link-color: #0645ad;
+    --link-visited: #0b0080;
+    --header-bg: #ffffff;
+    --table-stripe: #f2f2f2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/* Container */
+main, section, article {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px 40px;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 30px 40px;
+    border-bottom: 4px solid var(--accent-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    font-style: italic;
+}
+
+header a {
+    color: #ffeb3b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+header a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Headings */
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 1.5rem 0 0.5rem 0;
+    color: var(--text-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1.3rem 0 0.4rem 0;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.4rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0 0.3rem 0;
+    color: var(--text-color);
+}
+
+/* Navigation */
+nav {
+    background: white;
+    padding: 0;
+    border-bottom: 2px solid var(--border-color);
+    margin: 0;
+    display: flex;
+    gap: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 14px 24px;
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-right: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+}
+
+nav a:last-child {
+    border-right: none;
+}
+
+nav a:hover {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    border-right: 1px solid var(--border-color);
+    padding-bottom: 11px;
+}
+
+nav a:visited {
+    color: var(--link-color);
+}
+
+/* Paragraphs and Text */
+p {
+    margin: 1rem 0;
+    text-align: justify;
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--link-color);
+    transition: all 0.2s ease;
+}
+
+a:visited {
+    color: var(--link-visited);
+    border-bottom-color: var(--link-visited);
+}
+
+a:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    border-bottom-color: transparent;
+}
+
+/* Lists */
+ul, ol {
+    margin: 1rem 0 1rem 2rem;
+}
+
+li {
+    margin: 0.5rem 0;
+}
+
+li a {
+    border-bottom: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    background: white;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+table th {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+}
+
+table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+}
+
+table tr:nth-child(even) {
+    background-color: var(--table-stripe);
+}
+
+table tr:hover {
+    background-color: #e8f4f8;
+    transition: background-color 0.2s;
+}
+
+/* Sections */
+section {
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-left: 4px solid var(--primary-color);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+section#intro, section#getting-started {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(102, 153, 255, 0.03));
+}
+
+section#sections {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 107, 53, 0.03));
+}
+
+section#schedule {
+    max-width: 100%;
+    margin: 0;
+    padding: 40px;
+    border-left: none;
+    background: var(--bg-color);
+}
+
+/* Footer */
+footer {
+    background: var(--header-bg);
+    color: #666;
+    padding: 30px 40px;
+    text-align: center;
+    border-top: 2px solid var(--border-color);
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: var(--link-color);
+}
+
+/* Utility Classes */
+.br {
+    display: block;
+    height: 1rem;
+}
+
+/* Media Elements */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin: 1rem 0;
+    display: block;
+    transition: box-shadow 0.3s;
+}
+
+img:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+audio, video {
+    width: 100%;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+/* Details Element */
+details {
+    margin: 1rem 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    background-color: #fffbf0;
+    border-color: var(--accent-color);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--primary-color);
+    user-select: none;
+    padding: 5px 10px;
+    margin: -5px -10px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+summary:hover {
+    background-color: rgba(102, 153, 255, 0.1);
+}
+
+details p {
+    margin-top: 10px;
+}
+
+/* Band Color Classes */
+.band-maritime {
+    background-color: #c8e6c9 !important;
+}
+
+.band-maritime:hover {
+    background-color: #a5d6a7 !important;
+}
+
+.band-aeronautical {
+    background-color: #b3e5fc !important;
+}
+
+.band-aeronautical:hover {
+    background-color: #81d4fa !important;
+}
+
+.band-ham {
+    background-color: #bbdefb !important;
+}
+
+.band-ham:hover {
+    background-color: #90caf9 !important;
+}
+
+.band-broadcast {
+    background-color: #ffcdd2 !important;
+}
+
+.band-broadcast:hover {
+    background-color: #ef9a9a !important;
+}
+
+.band-ism-cb {
+    background-color: #fff9c4 !important;
+}
+
+.band-ism-cb:hover {
+    background-color: #fff59d !important;
+}
+
+.band-outofbands {
+    background-color: #e0e0e0 !important;
+    font-style: italic;
+    color: #666;
+    text-align: center;
+}
+
+.band-outofbands:hover {
+    background-color: #bdbdbd !important;
+}
+
+/* Schedule Table Styling */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: white;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+}
+
+.schedule-table thead {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.schedule-table th {
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 700;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    word-break: normal;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+}
+
+.schedule-table td {
+    padding: 14px 12px;
+    border: 1px solid var(--border-color);
+    vertical-align: middle;
+    height: auto;
+}
+
+.schedule-table tbody tr {
+    background: white;
+    transition: background-color 0.2s ease;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+.schedule-table .freq {
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    min-width: 90px;
+    font-size: 0.98rem;
+}
+
+.schedule-table .station {
+    font-weight: 600;
+    color: var(--text-color);
+    min-width: 200px;
+    line-height: 1.4;
+}
+
+.schedule-table .site {
+    text-align: left;
+    font-size: 0.9rem;
+    min-width: 140px;
+    color: #555;
+}
+
+.schedule-table .language {
+    text-align: center;
+    font-size: 0.9rem;
+    min-width: 100px;
+}
+
+.schedule-table .target {
+    text-align: center;
+    font-size: 0.9rem;
+    min-width: 100px;
+    color: #555;
+}
+
+.schedule-table .time {
+    text-align: center;
+    font-weight: 700;
+    color: var(--accent-color);
+    min-width: 70px;
+    font-size: 0.98rem;
+}
+
+.schedule-table .days {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    min-width: 180px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.schedule-table .days small {
+    display: block;
+    color: #888;
+    font-style: italic;
+    margin-top: 5px;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.utc-clock {
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(102, 153, 255, 0.08), rgba(255, 107, 53, 0.08));
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.utc-clock h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+#utc-time {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 3px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.radio-schedule {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    main, section, article {
+        padding: 15px 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    table th, table td {
+        padding: 8px 10px;
+    }
+
+    footer {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    main, section, article {
+        padding: 10px 15px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    table th, table td {
+        padding: 6px 8px;
+    }
+}
