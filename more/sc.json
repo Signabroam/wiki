@@ -616,7 +616,7 @@
         "language": "Farsi"
     },
     {
-        "station": "Pikhta26 Test count",
+    "station": "Pikhta26 Test count (April)",
         "days": "mon,tue,wed,thu,fri,sat,sun",
         "time":"0200",
         "com": "Asian pip station test count with caller Pikhta26",
@@ -627,11 +627,33 @@
         "language": "Russian"
     },
     {
-        "station": "Pikhta26 Test count",
+        "station": "Pikhta26 Test count (April)",
         "days": "mon,tue,wed,thu,fri,sat,sun",
         "time":"1400",
         "com": "Asian pip station test count with caller Pikhta26",
         "freq": "4619",
+        "mode": "USB",
+        "site": "South Eastern Russia, Asia",
+        "target": "Active",
+        "language": "Russian"
+    },
+    {
+    "station": "Pikhta26 Test count (May)",
+        "days": "mon,tue,wed,thu,fri,sat,sun",
+        "time":"0200",
+        "com": "Asian pip station test count with caller Pikhta26",
+        "freq": "7491",
+        "mode": "USB",
+        "site": "South Eastern Russia, Asia",
+        "target": "Active",
+        "language": "Russian"
+    },
+    {
+        "station": "Pikhta26 Test count (May)",
+        "days": "mon,tue,wed,thu,fri,sat,sun",
+        "time":"1400",
+        "com": "Asian pip station test count with caller Pikhta26",
+        "freq": "5045",
         "mode": "USB",
         "site": "South Eastern Russia, Asia",
         "target": "Active",

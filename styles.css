@@ -1,16 +1,14 @@
-/* Signabroam Wiki - Wikipedia + Fandom Style */
-
 :root {
-    --primary-color: #3366cc;
-    --secondary-color: #6699ff;
-    --accent-color: #ff6b35;
-    --text-color: #222;
-    --bg-color: #f8f9fa;
-    --border-color: #d8d8d8;
-    --link-color: #0645ad;
-    --link-visited: #0b0080;
-    --header-bg: #ffffff;
-    --table-stripe: #f2f2f2;
+    --background-color: rgba(5, 5, 15, 0.95);
+    --panel-bg: rgba(8, 12, 24, 0.92);
+    --panel-border: rgba(255, 255, 255, 0.08);
+    --text-color: #eef5ff;
+    --muted-text: rgba(255, 255, 255, 0.75);
+    --link-color: hsla(210, 100%, 80%, 1.0);
+    --link-visited: hsla(210, 100%, 85%, 1.0);
+    --link-hover: hsla(210, 100%, 100%, 1.0);
+    --accent: rgba(108, 170, 200, 0.55);
+    --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -19,243 +17,292 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Georgia, 'Times New Roman', serif;
+    min-height: 100vh;
+    background: no-repeat center center fixed;
+    background-color: var(--background-color);
+    background-image: url("/media/71188/optimized-sdrbackground4.jpg");
+    background-size: cover;
     color: var(--text-color);
-    background-color: var(--bg-color);
-    line-height: 1.6;
-    font-size: 14px;
+    font-family: 'Lato', 'Open Sans', Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    line-height: 1.7;
+    font-size: 15px;
+    padding: 30px 0 40px;
 }
 
-/* Container */
-main, section, article {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    padding: 20px 40px;
+::selection {
+    background-color: rgba(108, 170, 200, 0.3);
 }
 
-/* Header */
+::-moz-selection {
+    background-color: rgba(108, 170, 200, 0.3);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 15, 0.64);
+    pointer-events: none;
+    z-index: -1;
+}
+
+main,
+section,
+article,
+footer {
+    max-width: 1000px;
+    margin: 0 auto 24px;
+    padding: 28px 32px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 30px 40px;
-    border-bottom: 4px solid var(--accent-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid var(--panel-border);
+    border-radius: 20px;
+    padding: 38px 36px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(12px);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
+    font-size: clamp(2rem, 3vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.7rem;
 }
 
 header p {
-    font-size: 1.1rem;
-    opacity: 0.95;
-    font-style: italic;
+    color: var(--muted-text);
+    font-size: 1.05rem;
+    max-width: 840px;
 }
 
 header a {
-    color: #ffeb3b;
+    color: var(--link-color);
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s;
+    font-weight: 700;
 }
 
 header a:hover {
-    color: white;
+    color: var(--link-hover);
     text-decoration: underline;
 }
 
-/* Headings */
-h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 1.5rem 0 0.5rem 0;
+h1,
+h2,
+h3,
+h4,
+h5 {
     color: var(--text-color);
-    border-bottom: 3px solid var(--primary-color);
-    padding-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 3vw, 3rem);
+    margin: 0 0 1rem 0;
 }
 
 h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 1.3rem 0 0.4rem 0;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.4rem;
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
+    margin: 1.6rem 0 0.75rem 0;
+    color: var(--link-color);
+    border-bottom: 2px solid rgba(108, 170, 200, 0.18);
+    padding-bottom: 0.5rem;
 }
 
 h3 {
     font-size: 1.2rem;
-    font-weight: bold;
-    margin: 1rem 0 0.3rem 0;
-    color: var(--text-color);
+    margin: 1.2rem 0 0.5rem 0;
 }
 
-/* Navigation */
-nav {
-    background: white;
-    padding: 0;
-    border-bottom: 2px solid var(--border-color);
-    margin: 0;
-    display: flex;
-    gap: 0;
-}
-
-nav a {
-    display: inline-block;
-    padding: 14px 24px;
-    color: var(--link-color);
-    text-decoration: none;
-    border-bottom: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    border-right: 1px solid var(--border-color);
-    transition: all 0.2s ease;
-}
-
-nav a:last-child {
-    border-right: none;
-}
-
-nav a:hover {
-    background-color: var(--bg-color);
-    color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
-    border-right: 1px solid var(--border-color);
-    padding-bottom: 11px;
-}
-
-nav a:visited {
-    color: var(--link-color);
-}
-
-/* Paragraphs and Text */
 p {
     margin: 1rem 0;
-    text-align: justify;
+    color: var(--muted-text);
 }
 
-/* Links */
 a {
     color: var(--link-color);
     text-decoration: none;
-    border-bottom: 1px dotted var(--link-color);
-    transition: all 0.2s ease;
+    border-bottom: 1px dotted rgba(108, 170, 200, 0.8);
+    transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 a:visited {
     color: var(--link-visited);
-    border-bottom-color: var(--link-visited);
+    border-bottom-color: rgba(173, 210, 235, 0.8);
 }
 
 a:hover {
-    background-color: var(--secondary-color);
-    color: white;
+    color: var(--link-hover);
     border-bottom-color: transparent;
 }
 
-/* Lists */
-ul, ol {
-    margin: 1rem 0 1rem 2rem;
+ul,
+ol {
+    margin: 1rem 0 1rem 1.6rem;
+    padding-left: 0;
+}
+
+ul {
+    list-style: none;
 }
 
 li {
     margin: 0.5rem 0;
+    position: relative;
+    padding-left: 1.4rem;
 }
 
-li a {
-    border-bottom: none;
+li:before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
 }
 
-li a:hover {
-    text-decoration: underline;
+details {
+    background: rgba(0, 0, 0, 0.623);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
 }
 
-/* Tables */
+details summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--link-color);
+    list-style: none;
+}
+
+section {
+    border-left: 4px solid rgba(108, 170, 200, 0.75);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+section#intro,
+section#getting-started,
+section#sections,
+section#resources {
+    background: rgba(0, 0, 0, 0.137);
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
-    background: white;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin: 1.6rem 0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-color);
 }
 
 table th {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 12px 15px;
+    background: rgba(0, 0, 0, 0.6);
     text-align: left;
-    font-weight: bold;
-    border: 1px solid var(--border-color);
-}
-
-table td {
-    padding: 12px 15px;
-    border: 1px solid var(--border-color);
+    font-weight: 700;
 }
 
 table tr:nth-child(even) {
-    background-color: var(--table-stripe);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 table tr:hover {
-    background-color: #e8f4f8;
-    transition: background-color 0.2s;
+    background: rgba(108, 170, 200, 0.12);
 }
 
-/* Sections */
-section {
-    margin: 20px 0;
-    padding: 20px 40px;
-    border-left: 4px solid var(--primary-color);
-    background: rgba(255, 255, 255, 0.8);
+table th {
+    color: var(--text-color) !important;
 }
 
-section#intro, section#getting-started {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(102, 153, 255, 0.03));
+table tr:not(:first-child) td {
+    color: white !important;
 }
 
-section#sections {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 107, 53, 0.03));
+table tr.band-outofbands td {
+    background: rgba(255, 255, 255, 0.08);
+    color: black !important;
 }
 
-section#schedule {
-    max-width: 100%;
-    margin: 0;
-    padding: 40px;
-    border-left: none;
-    background: var(--bg-color);
+table tr.band-ism-cb td {
+    background: rgba(115, 170, 220, 0.16);
+    color: black !important;
 }
 
-/* Footer */
+table tr.band-broadcast td {
+    background: rgba(190, 150, 225, 0.16);
+    color: black !important;
+}
+
+table tr.band-ham td {
+    background: rgba(135, 220, 155, 0.16);
+    color: black !important;
+}
+
+table tr.band-maritime td {
+    background: rgba(145, 205, 255, 0.16);
+    color: black !important;
+}
+
+table tr.band-aeronautical td {
+    background: rgba(255, 170, 120, 0.16);
+    color: black !important;
+}
+
 footer {
-    background: var(--header-bg);
-    color: #666;
-    padding: 30px 40px;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgba(255, 255, 255, 0.75);
     text-align: center;
-    border-top: 2px solid var(--border-color);
-    margin-top: 40px;
-    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.95rem;
 }
 
 footer p {
-    margin: 0.5rem 0;
+    margin: 0.85rem 0;
 }
 
 footer a {
     color: var(--link-color);
 }
 
-/* Utility Classes */
 .br {
     display: block;
     height: 1rem;
+}
+
+@media (max-width: 860px) {
+    body {
+        padding: 18px 0 28px;
+    }
+
+    main,
+    section,
+    article,
+    footer,
+    header {
+        padding: 24px 20px;
+        margin: 0 16px 20px;
+    }
+
+    section {
+        border-left-width: 3px;
+    }
 }
 
 /* Media Elements */
@@ -283,14 +330,14 @@ audio, video {
 details {
     margin: 1rem 0;
     padding: 15px;
-    background-color: #f5f5f5;
+    background-color: #000000;
     border: 1px solid var(--border-color);
     border-radius: 4px;
     transition: all 0.3s ease;
 }
 
 details[open] {
-    background-color: #fffbf0;
+    background-color: #040025;
     border-color: var(--accent-color);
 }
 
@@ -370,14 +417,14 @@ details p {
     width: 100%;
     border-collapse: collapse;
     margin: 2rem 0;
-    background: white;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
     font-size: 0.95rem;
 }
 
 .schedule-table thead {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: rgba(10, 25, 50, 0.95);
     color: white;
     position: sticky;
     top: 0;
@@ -387,30 +434,32 @@ details p {
     padding: 16px 12px;
     text-align: left;
     font-weight: 700;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     word-break: normal;
     font-size: 0.95rem;
     letter-spacing: 0.3px;
+    color: white;
 }
 
 .schedule-table td {
     padding: 14px 12px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     vertical-align: middle;
     height: auto;
+    color: #eef5ff;
 }
 
 .schedule-table tbody tr {
-    background: white;
+    background: rgba(255, 255, 255, 0.03);
     transition: background-color 0.2s ease;
 }
 
 .schedule-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.06);
 }
 
 .schedule-table tbody tr:hover {
-    background-color: #f0f7ff;
+    background-color: rgba(108, 170, 200, 0.16);
 }
 
 .schedule-table .freq {
@@ -582,3 +631,30 @@ details p {
         padding: 6px 8px;
     }
 }
+
+/* Media Elements Styling */
+img {
+    max-width: 400px;
+    max-height: 400px;
+    border: 8px solid rgba(108, 170, 200, 0.4);
+    border-radius: 12px;
+    display: block;
+    margin: 8px auto;
+}
+
+video {
+    max-width: 400px;
+    max-height: 400px;
+    border: 8px solid rgba(108, 170, 200, 0.4);
+    border-radius: 12px;
+    display: block;
+    margin: 8px auto;
+}
+
+audio {
+    max-width: 400px;
+    width: 100%;
+    display: block;
+    margin: 8px auto;
+}
+
