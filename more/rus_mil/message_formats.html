@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Military Message Formats - Radio Communication Urgency Categories</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000000;
+        }
+        .container {
+            background-color: black;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #914747;
+            border-bottom: 3px solid #c41e3a;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #c41e3a;
+            margin-top: 30px;
+            border-left: 4px solid #c41e3a;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        .category-list {
+            background-color: #0b3901;
+            border-left: 4px solid #c41e3a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .category-list ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        .category-list li {
+            margin: 8px 0;
+        }
+        .priority-order {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .priority-item {
+            background-color: #07322d;
+            border-left: 4px solid #c41e3a;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .priority-item strong {
+            color: #c41e3a;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .signal-category {
+            background-color: #424d34;
+            border-left: 4px solid #c41e3a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .signal-row {
+            margin: 12px 0;
+            padding: 10px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 4px;
+            border-left: 3px solid #ddd;
+        }
+        .signal-level {
+            font-weight: bold;
+            color: #c41e3a;
+        }
+        .signal-name {
+            font-style: italic;
+            color: #333;
+        }
+        .encoding {
+            background-color: #465044;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        .color-coding {
+            background-color: #4f4040;
+            border-left: 4px solid #c41e3a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .color-item {
+            margin: 10px 0;
+            padding: 8px;
+        }
+        .note {
+            background-color: #5c4600;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Russian Military Radio Message Formats</h1>
+        <p><strong>Urgency Categories and Transmission Protocol</strong></p>
+
+        <h2>Message Categories</h2>
+        <p>The message information is divided into the following categories, by importance and urgency:</p>
+        <div class="category-list">
+            <ul>
+                <li>Signals of combat control and warnings</li>
+                <li>Messages divided into categories of urgency:
+                    <ul>
+                        <li><strong>"Monolith"</strong> (Монолит)</li>
+                        <li><strong>"Air"</strong> (Воздух)</li>
+                        <li><strong>"Rocket"</strong> (Ракета)</li>
+                        <li><strong>"Plane"</strong> (Самолет)</li>
+                        <li><strong>"Regular"</strong> (Обычный)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <h2>Message Transmission Order by Urgency</h2>
+        <p>Radio messages in various categories of urgency are transmitted in the following order:</p>
+        <div class="priority-order">
+            <div class="priority-item">
+                <strong>1. MONOLITH</strong>
+                <p>Reception and transmission of messages in other categories of urgency are interrupted.</p>
+            </div>
+            <div class="priority-item">
+                <strong>2. AIR</strong>
+                <p>After "Monolith" category messages, also called Vozdukh (Воздух), reception and transmission of messages in categories "Rocket", "Plane", and "Regular" are interrupted.</p>
+            </div>
+            <div class="priority-item">
+                <strong>3. ROCKET</strong>
+                <p>After "Monolith" and "Air" category messages, reception and transmission of messages in categories "Plane" and "Regular" are interrupted.</p>
+            </div>
+            <div class="priority-item">
+                <strong>4. PLANE</strong>
+                <p>After "Monolith", "Air", and "Rocket" category messages, reception and transmission of "Regular" messages are interrupted.</p>
+            </div>
+            <div class="priority-item">
+                <strong>5. REGULAR</strong>
+                <p>Messages are transmitted after "Plane" category messages, in order of their arrival.</p>
+            </div>
+        </div>
+
+        <h2>Special Note</h2>
+        <div class="note">
+            <strong>Emergency signals</strong> are given higher priority than "Monolith" category messages.
+        </div>
+
+        <h2>Encoding Methods</h2>
+        <p>When operating an open radio channel, the category of message's urgency is coded via cipher table of radio operator on duty, or using a different method.</p>
+        
+        <p>When using international call signs, the category of message's urgency is transmitted openly in abbreviated form in Russian:</p>
+        <div class="encoding">
+            <strong>Monolith:</strong> XXX XXX<br>
+            <strong>Air:</strong> взд<br>
+            <strong>Rocket:</strong> ркт<br>
+            <strong>Plane:</strong> смл
+        </div>
+
+        <h2>Color Coding System</h2>
+        <p>Received and printed messages are color-coded by their urgency:</p>
+        <div class="color-coding">
+            <div class="color-item"><strong style="color: red;">■ RED HATCHING</strong> – "Monolith" and "Air" categories</div>
+            <div class="color-item"><strong style="color: green;">■ GREEN</strong> – "Rocket" category</div>
+            <div class="color-item"><strong style="color: blue;">■ BLUE</strong> – "Plane" category</div>
+            <img src="./Russian-Message-Chart.webp" alt="Russian Military Message Format Chart">
+        </div>
+
+        <h2>Training and Combat Signals</h2>
+        <p>The following signals are classified based on threat level: B/C (Low), Б/B (High), A/A (Full)</p>
+
+        <h3>PRILEZhNYJ SEJaTEL - Terrorist Threat Signals</h3>
+
+        <div class="signal-category">
+            <h4>Training Signals</h4>
+            <div class="signal-row">
+                <span class="signal-level">Low:</span>
+                <span class="signal-name">Прилежный Сеятель</span> / Prilezhnyj Seyatel
+                <p><em>("Diligent Sower")</em> – Low level terrorist threat training signal</p>
+            </div>
+            <div class="signal-row">
+                <span class="signal-level">High:</span>
+                <span class="signal-name">Неважный Эпилог</span> / Nevazhnyj Epilog
+                <p><em>("Unimportant Epilogue")</em></p>
+            </div>
+            <div class="signal-row">
+                <span class="signal-level">Full:</span>
+                <span class="signal-name">Угнетающий рельеф</span> / Ugnetayushchij Rel'ef
+                <p><em>("Depressing Terrain")</em></p>
+            </div>
+            <div class="signal-row">
+                <span class="signal-level">Cancel:</span>
+                <span class="signal-name">Осторожный Победитель</span> / Ostorozhnyj Pobeditel
+                <p><em>("Careful Winner")</em> – Signal to cancel orders</p>
+            </div>
+        </div>
+
+        <div class="signal-category">
+            <h4>Combat Signals</h4>
+            <div class="signal-row">
+                <span class="signal-level">Low:</span>
+                <span class="signal-name">Чепкий Ястреб</span> / Cepkij Yastreb
+                <p><em>("Tenacious Hawk")</em></p>
+            </div>
+            <div class="signal-row">
+                <span class="signal-level">High:</span>
+                <span class="signal-name">Стихийный Пыль</span> / Stihijnyj Pyl
+                <p><em>("Spontaneous Fervor")</em></p>
+            </div>
+            <div class="signal-row">
+                <span class="signal-level">Full:</span>
+                <span class="signal-name">Стандарт Жестокий</span> / Zhestokij Standart
+                <p><em>("Cruel Standard")</em></p>
+            </div>
+            <div class="signal-row">
+                <span class="signal-level">Cancel:</span>
+                <span class="signal-name">Бескровный шлейф</span> / Beskrovnyj Shlejf
+                <p><em>("Bloodless Trail")</em> – Signal to cancel orders</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Source:</strong> <a href="./Rukovodstvo-Po-Radiosvyazi-Vs-Sssr.pdf">Наставление по радиосвязи в вооруженных силах СССР (The Radio Manual for the Armed Forces of the USSR)</a></p>
+            <p><strong>Translation:</strong> From Russian by Yuri Giderashko</p>
+            <p><strong>Note:</strong> This information is freely available, but only among a narrow circle of informed people. Information regarding the <a href="./rusmil_coms_in_leningrad.html">buzzer monoliths was commented on by an ex-Russian serviceman</a>.</p>
+            <img src="./USSR-Excellent-Signalist-Badge.webp" alt="USSR Excellent Signalist Badge">
+            <p>Soviet Army Expert Radio Operator Badge</p>
+        </div>
+    </div>
+    <footer>
+        <p>All informations come from numbers-stations.com & priyom.org</p>
+        <p>&copy; 2024 Signabroam Shortwave Wiki. All rights reserved.</p>
+    </footer>
+</body>
+</html>
