@@ -634,7 +634,7 @@ details p {
 
 /* Media Elements Styling */
 img {
-    max-width: 400px;
+    max-width: 1000px;
     max-height: 400px;
     border: 8px solid rgba(108, 170, 200, 0.4);
     border-radius: 12px;
@@ -643,7 +643,7 @@ img {
 }
 
 video {
-    max-width: 400px;
+    max-width: 1000px;
     max-height: 400px;
     border: 8px solid rgba(108, 170, 200, 0.4);
     border-radius: 12px;
