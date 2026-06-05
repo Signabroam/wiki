@@ -658,3 +658,19 @@ audio {
     margin: 8px auto;
 }
 
+/* Waterfall images row: place small sets of images side-by-side */
+.wf-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0.6rem 0;
+}
+.wf-row img {
+    display: block;
+    max-width: calc(50% - 6px);
+    height: auto;
+    margin: 0;
+}
+
