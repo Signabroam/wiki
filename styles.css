@@ -195,7 +195,10 @@ section {
 section#intro,
 section#getting-started,
 section#sections,
-section#resources {
+section#resources,
+section#contributors,
+section#about,
+section#contact {
     background: rgba(0, 0, 0, 0.137);
 }
 
@@ -689,6 +692,8 @@ details p {
 @media (max-width: 480px) {
     body {
         font-size: 12px;
+        margin-left: 8px;
+        margin-right: 8px;
     }
 
     header {

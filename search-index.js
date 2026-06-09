@@ -88,7 +88,7 @@ window.siteSearchIndex = [
   { path: 'eu_military/unid13550.html', title: 'UNID-13550', snippet: 'European military unidentified station' },
   { path: 'pirate/4525.html', title: '4525', snippet: 'Pirate radio station' },
   { path: 'pirate/akula56.html', title: 'Akula-56', snippet: 'Pirate station' },
-  { path: 'pirate/m21.html', title: 'M-21', snippet: 'Pirate radio station' },
+  { path: 'pirate/m4j.html', title: 'M4J - Mystery for Joy', snippet: 'Pirate radio station' },
   { path: 'pirate/radiozand.html', title: 'Radiozand', snippet: 'Pirate radio station' },
   { path: 'pirate/rojxam.html', title: 'Rojxam', snippet: 'Pirate station' },
   { path: 'pirate/tsvef.html', title: 'Tsvef', snippet: 'Pirate radio station' },
