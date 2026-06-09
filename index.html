@@ -11,7 +11,9 @@
     <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
     <link rel="shortcut icon" href="./assets/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
-    <link rel="manifest" href="./assets/site.webmanifest" /> 
+    <link rel="manifest" href="./assets/site.webmanifest" />
+    <script src="search-index.js"></script>
+    <script src="search.js"></script>
 </head>
 <body>
     <header>
@@ -33,6 +35,11 @@
     <section id="sections">
         <h2>Sections of the Wiki</h2>
         <p>Important information: to index the high amount of stations we have given the stations an ID like the ENIGMA did to index the stations. More info about ID <a href="./more/ids.html">here</a>.</p>
+        <div class="search-bar">
+            <p><b>Search a station faster here:</b> (still experimental)</p>
+            <input type="text" id="search-input" placeholder="🔍 Search stations, topics, frequencies...">
+            <div id="search-results"></div>
+        </div>
         <ul>
             <li><a href="rusmil.html">Russian Military</a></li>
             <li><a href="usa.html">United States Military</a></li>
@@ -49,6 +56,7 @@
         <h2>Additional Resources</h2>
         <p><a href="./more/bandplan.html">Band Plan</a></p>
         <p><a href="./more/stationschedule.html">Station Schedule (Experimental)</a></p>
+        <p><a href="./more/ids.html">Signabroam IDs</a></p>
     </section>
     <br>
     <footer>
