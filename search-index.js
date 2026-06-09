@@ -95,5 +95,9 @@ window.siteSearchIndex = [
   { path: 'us_military/hfgcs.html', title: 'HFGCS', snippet: 'US military High Frequency Global Communications System' },
   { path: 'more/bandplan.html', title: 'Band Plan', snippet: 'Radio frequency band plan and allocations' },
   { path: 'more/ids.html', title: 'Station IDs', snippet: 'Information about station ID system' },
-  { path: 'more/stationschedule.html', title: 'Station Schedule', snippet: 'Schedule of broadcast times for stations' }
+  { path: 'more/stationschedule.html', title: 'Station Schedule', snippet: 'Schedule of broadcast times for stations' },
+  { path: 'numbers-stations.html', title: 'Numbers Stations', snippet: 'List of Numbers Stations around the world'},
+  { path: 'numbers-stations/fl.html', title: 'FL Number Station', snippet: 'Numbers Stations'},
+  { path: 'numbers-stations/msk.html', title: 'MSK Number Station', snippet: 'Numbers Stations'},
+  { path: 'numbers-stations/ici.html', title: 'ICI Number Station', snippet: 'Numbers Stations'}
 ];
