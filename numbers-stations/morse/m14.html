@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M14 - Signabroam Shortwave Wiki</title>
+    <meta name="og:title" content="M14 - Signabroam Shortwave Wiki">
+    <meta name="og:description" content="Information about the M14 numbers station.">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/site.webmanifest" /> 
+</head>
+<body>
+    <header>
+        <h1>Signabroam Shortwave Wiki</h1>
+        <p>Click <a href="/">here</a> to go back to the main page.</p>
+    </header>
+    <br>
+    <h2>About the M14 Numbers Station</h2>
+    <table>
+        <tr>
+            <th>Name:</th>
+            <td>
+                M14 <br>
+                ENIGMA ID: M14 <br>
+                Signabroam ID: NS0714-MO
+            </td>
+        </tr>
+        <tr>
+            <th>Frequencies</th>
+            <td>
+                See <a href="https://priyom.org/number-stations/station-schedule">Priyom.org</a> for the schedule of M14.
+            </td>
+        </tr>
+        <tr>
+            <th>Status</th>
+            <td>
+                Active
+            </td>
+        </tr>
+        <tr>
+            <th>Voice</th>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th>Mode</th>
+            <td>CW, USB (with Carrier)</td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td>
+                Moscow, Russia
+            </td>
+        </tr>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>
+                M14 is a Numbers Station operated by the operator <b>Russian 6</b>. <br>
+                M14 format is a reading of numbers in Morse with 3 different format:<br>
+                - Null: 3 Digit ID spelled thrice (during 4 minutes), and then 00000 to end the transmission. <br>
+                - Traffic, single message: 3 Digit ID (during 4 minutes), then 3 digit group spelled twice, one Group count also spelled twice, ==, 5 digit paired groups, ==, 3 digit group spelled twice, a group count spelled twice, and then 00000 to end the transmission. <br>
+                - Traffic, two message: 3 Digit ID (during 4 minutes), then 3 digit group spelled twice, one Group count also spelled twice, ==, 5 digit paired groups, ==, 3 digit group spelled twice, 3 Digit ID (during 1 minute), 3 digit group spelled twice, one group count spelled twice, ==, 5 digit paired groups, ==, 3 digit group spelled twice, group count spelled twice, a group count spelled twice, and then 00000 to end the transmission.
+                <br><br>
+                Informations from ENIGMA:
+                <pre>
+MCW / ICW Auto Sent Short 0 E06, G06, S06
+5F < 3F,ends "00000" long or short
+
+Similar format to M01 - But ends 00000
+Call ID always 3 fig. DK always 3fig. Paired groups.
+Null Format: DK DK DK 00000 (Repeated for 4 mins).
+Msg Format; Call-up ID repeated for 4 mins, DK DK GC GC = =,
+msg 5 fig paired grps, ending DK DK GC GC 00000
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <th>Counterpart stations</th>
+            <td>
+                <ul>
+                    <p><b>Active:</b></p>
+                    <li><a href="./e06.html">E06</a></li>
+                    <li><a href="./s06.html">S06</a></li>
+                    <li><a href="./f01.html">F01</a></li>
+                    <li><a href="./f06.html">F06</a></li>
+                    <p><b>Inactive:</b></p>
+                    <li><a href="./e17.html">E17</a></li>
+                    <li><a href="./g06.html">G06</a></li>
+                    <li><a href="./v06.html">V06</a></li>
+                    <li><a href="./v23.html">V23</a></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Media</th>
+            <td>
+                More informations and media at <a href="https://priyom.org/number-stations/morse/m14">https://priyom.org/number-stations/morse/m14</a>
+            </td>
+        </tr>
+    </table>
+    <footer>
+        <p>All information above is credited from priyom.org and signalshed.com (ENIGMA2000).</p>
+    </footer>
+</body>
+</html> 
