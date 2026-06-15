@@ -86,6 +86,8 @@ window.siteSearchIndex = [
   { path: 'eu_military/pjc.html', title: 'PJC', snippet: 'European military communications' },
   { path: 'eu_military/pjk.html', title: 'PJK', snippet: 'European military station' },
   { path: 'eu_military/unid13550.html', title: 'UNID-13550', snippet: 'European military unidentified station' },
+  { path: 'eu_military/fav22.html', title: 'FAV22', snippet: 'French Morse station' },
+  { path: 'eu_military/f9tm.html', title: 'F9TM', snippet: 'French Morse station' },
   { path: 'pirate/4525.html', title: '4525', snippet: 'Pirate radio station' },
   { path: 'pirate/akula56.html', title: 'Akula-56', snippet: 'Pirate station' },
   { path: 'pirate/m4j.html', title: 'M4J - Mystery for Joy', snippet: 'Pirate radio station' },
