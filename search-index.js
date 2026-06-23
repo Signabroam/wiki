@@ -180,5 +180,6 @@ window.siteSearchIndex = [
   { path: 'time_stations/YVTO.html', title: 'YVTO - Signabroam Shortwave Wiki', snippet: 'YVTO - Signabroam Shortwave Wiki Signabroam Shortwave Wiki Click here to go back to the main page' },
   { path: 'time_stations/wwv.html', title: 'WWV - Signabroam Shortwave Wiki', snippet: 'WWV - Signabroam Shortwave Wiki Signabroam Shortwave Wiki Click here to go back to the main page' },
   { path: 'time_stations/wwvb.html', title: 'WWVB - Signabroam Shortwave Wiki', snippet: 'WWVB - Signabroam Shortwave Wiki Signabroam Shortwave Wiki Click here to go back to the main page' },
-  { path: 'time_stations/wwvh.html', title: 'WWVH - Signabroam Shortwave Wiki', snippet: 'WWVH - Signabroam Shortwave Wiki Signabroam Shortwave Wiki Click here to go back to the main page' }
+  { path: 'time_stations/wwvh.html', title: 'WWVH - Signabroam Shortwave Wiki', snippet: 'WWVH - Signabroam Shortwave Wiki Signabroam Shortwave Wiki Click here to go back to the main page' },
+  { path: 'modems/cis4.html', title: 'CIS-4 - Signabroam Shortwave Wiki', snippet: 'CIS-4 - Signabroam Shortwave Wiki Signabroam Shortwave Wiki Click here to go back to the main page' }
 ];
