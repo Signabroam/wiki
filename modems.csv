@@ -1,0 +1,5 @@
+nom,id,frequences,status,mode,location
+CIS-112 Signabroam ID: MD112,MD112,Multiple,Active,"USB/LSB/DSB/AM, DQPSK22.22",Russia
+CIS-12 (AT-3004D / AT-3104D) Signabroam ID: MD12,MD12,Multiple,Active,"USB/LSB/DSB/AM, QPSK12",Russia
+CIS-3 Signabroam ID: MD3.3,MD3.3,"5287, 5363, 5907, 6911, 7032, 7667, 8106, 8514, 8568, 9283 kHz",Active,"USB, 14/15 Channels (4/5 Groups of 2/3 Channels)",Russia
+CIS-4 Signabroam ID: MD4,MD4,6970 kHz,Active,"USB, FSK 4x2",Russia

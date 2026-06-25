@@ -1,0 +1,19 @@
+nom,id,frequences,status,mode,location
+"ALS162, TDF, FI Signabroam ID: TS-ALS162",TS-ALS162,162 kHz,Active,"AM + CW, phase modulation DCF77 Compatible time frame","Allouis, France"
+BPC Signabroam ID: TS-BPC,TS-BPC,68.5 kHz,Active,ASK / PWM,"Near Shangqiu, China"
+BPM Signabroam ID: TS-BPM,TS-BPM,"2500, 5000, 10000, 15000 kHz",Active,AM,"Pucheng (Shaanxi), China"
+BSF Signabroam ID: TS-BSF,TS-BSF,"5000, 15000 kHz",Inactive,AM,Taiwan
+CHU Signabroam ID: TS-CHU,TS-CHU,"3330, 7850, 14670 kHz",Inactive,"AM, USB with carrier",Canada
+DCF77 Signabroam ID: TS-DCF77,TS-DCF77,77.5 kHz,Active,"AM ASK 100/200ms Pulses, PN code phase modulation","Mainflinger Str. 1, 63533 Mainhausen, Germany"
+HBG Signabroam ID: TS-HBG,TS-HBG,75 kHz,Inactive,AM time code,Switzerland
+HLA Signabroam ID: TS-HLA,TS-HLA,5000 kHz,Inactive,AM,South Korea
+JJY (HF) Signabroam ID: TS-JJY-HF,TS-JJY-HF,"2500, 5000, 8000, 10000 kHz",Inactive,"AM, DSB",Japan
+JJY (LF) Signabroam ID: TS-JJY-LF,TS-JJY-LF,"40, 60 kHz",Active,ASK / PWM,Japan
+LOL Signabroam ID: TS-LOL,TS-LOL,"5000 10000, 15000 kHz",Inactive,"AM, DSB",Argentina
+MSF Signabroam ID: TS-MSF,TS-MSF,60 kHz,Active,ASK / PWM,"Anthorn, Cumbria, England, United Kingdom"
+RBU Signabroam ID: TS-RBU,TS-RBU,66.666 kHz,Sporadic (Inactive),AMN (AM Narrowband),Russia (Ex-USSR time)
+RWM Signabroam ID: TS-RWM,TS-RWM,"4996, 9996, 14996 kHz",Active,"OOK, CW","Moscow, Russia"
+WWV Signabroam ID: TS-WWV,TS-WWV,"2500, 5000, 10000, 15000, 20000, 25000 kHz",Active,AM,"Fort Collins, Colorado, USA"
+WWVB Signabroam ID: TS-WWVB,TS-WWVB,60 kHz,Active,Atomic PWM x ASK,"Fort Collins, Colorado, USA"
+WWVH Signabroam ID: TS-WWVH,TS-WWVH,"2500, 5000, 10000, 15000 kHz",Active,AM,"Hawaï/Hawaii, USA"
+YVTO Signabroam ID: TS-YVTO,TS-YVTO,5000 kHz,Inactive,"AM, DSB",Venezuela

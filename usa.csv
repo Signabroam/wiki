@@ -1,0 +1,6 @@
+nom,id,frequences,status,mode,location
+Customs Over The Horizon Enforcement Network (COTHEN) Signabroam ID: US-MIL-COTHEN,US-MIL-COTHEN,"5732, 7527, 8983 kHz, and others",Active,USB,
+"HF Global Communication System (HFGCS) Callsigns: Mainsail, Andersen, Andrews, Ascension, Croughton, Diego Garcia, Elmendorf, Hickam, Lajes, Offutt, Puerto Rico, Sigonella, West Coast, Yokota Signabroam ID: US-MIL-HFGCS",US-MIL-HFGCS,"4724, 8992, 11175, 15016",Active,USB,Worldwide
+Shared Resources HF Radio Program (SHARES) Signabroam ID: US-MIL-SHARES,US-MIL-SHARES,Multiple HF frequencies,Active,USB,
+US Navy MARS / Navy HF Networks Signabroam ID: US-MIL-US-NAVY-MARS,US-MIL-US-NAVY-MARS,Multiple variable HF frequencies,Active,"USB, ALE, DATA",Worldwide
+USAF Global High Frequency System (GHFS) Signabroam ID: US-MIL-USAF-GHFS,US-MIL-USAF-GHFS,Same bands as HFGCS,Active,"USB, ALE",Worldwide

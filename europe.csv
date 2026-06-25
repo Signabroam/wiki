@@ -1,0 +1,16 @@
+nom,id,frequences,status,mode,location
+Dutch Navy Stanag-4285 Signabroam ID: MD42-03,MD42-03,"2591, 4153, 4203, 6498, 6722, 8506 kHz",Active,"USB, MIL-STD-4285",The Netherlands
+F9TM Signabroam ID: MO23,MO23,3536 kHz,Active (Only the Thursday at 19:30 UTC+02 and last ~1h40 long),CW,"Ile-de-France, France"
+FAV22 Signabroam ID: MO22,MO22,"3881, 6825 kHz (3880, 6824 kHz in USB)",Active,CW,"Ile-de-France, France"
+"Navy Den Helder ""De Kooy"" Signabroam ID: D05",D05,,Active,USB,"Den Helder, Netherlands"
+"One Beep, Two Beeps Callsigns: LBA, LBJ, JWG, JWT, JWZ, JXU Signabroam ID: U4508",U4508,"4508, 4500, 5099, 6405, 6429",Active,"USB, MIL-STD-4285","Bodø, Norway"
+PBB / PCB Warship Signabroam ID: D02,D02,,Active,USB,The Netherlands
+PBB Den Helder Signabroam ID: TTY-04-1,TTY-04-1,"2474, 4250, 4280, 5214, 5052, 5659, 5694.5, 6356, 6358.5, 8435.4, 8437, 8439, 9264, 9368, 12840.5, 12841, 16318, 17116.7, 17947, 18308, 20098 kHz",Active,"USB, RTTY 75/850","Den Helder, The Netherlands"
+PBB Stanag-4285 Signabroam ID: MD42-01,MD42-01,"5160, 6498, 6893, 12568 kHz",Active,"USB, MIL-STD-4285","Den Helder, The Netherlands"
+PCB Goeree Island Signabroam ID: TTY-04-2,TTY-04-2,"4280, 5667, 6358.5, 8439, 12577, 12840.7 kHz",Active,"USB, RTTY 75/850","Goeree Island, The Netherlands"
+PCB Stanag-4285 Signabroam ID: MD42-02,MD42-02,"4203, 5160, 6893, 8408 kHz",Active,"USB, MIL-STD-4285","Goeree Island, The Netherlands"
+PJC NRN Hato Curacao (Counter-Narco OPS) Signabroam ID: D03,D03,8199.6 kHz,Active,USB,"Willemstad, Curacao, Netherlands Antilles"
+PJK Suffisant Curacao (ASW Operations) Signabroam ID: D04,D04,11178 kHz,Active,USB,"Willemstad ,Curacao, Netherlands Antilles"
+PVB NAS Valkenburg Signabroam ID: D01,D01,"3128, 5705, 6728, 8971, 11178 kHz",Active,USB,"NAS Valkenburg, The Netherlands"
+UNID 13550 Signabroam ID: U13550,U13550,13550 kHz,Unknown,USB,"Near Lille, France"
+XF Faders / XM Whales Signabroam ID: U6853,U6853,6853 kHz,Active,USB,Somewhere in Europe

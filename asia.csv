@@ -1,0 +1,3 @@
+nom,id,frequences,status,mode,location
+Chinese Robot ENIGMA ID: VC01 Signabroam ID: CH01,CH01,Frequencies constantly changing - List of known frequencies,Active,"LSB, USB",China
+Slot Machine ENIGMA ID: XSL Signabroam ID: MD01,MD01,"4152.5, 4231, 4290.5, 6249.5, 6416.5, 6444.5, 8312.5, 8587.5, 8703",Active,QPSK,"Ichihara, Japan"

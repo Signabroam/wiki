@@ -13,6 +13,16 @@
     --btn-bg-strong: rgba(108, 170, 200, 0.24);
     --btn-text: #eaf8ff;
     --btn-border: rgba(108, 170, 200, 0.28);
+    --status-active: rgba(72, 187, 79, 0.18);
+    --status-active-strong: rgba(72, 187, 79, 0.28);
+    --status-inactive: rgba(221, 77, 77, 0.18);
+    --status-inactive-strong: rgba(221, 77, 77, 0.28);
+    --status-unknown: rgba(247, 153, 33, 0.18);
+    --status-unknown-strong: rgba(247, 153, 33, 0.28);
+    --status-other: rgba(76, 132, 255, 0.18);
+    --status-other-strong: rgba(76, 132, 255, 0.28);
+    --status-soon: rgba(242, 219, 87, 0.18);
+    --status-soon-strong: rgba(242, 219, 87, 0.28);
 }
 
 * {
@@ -167,6 +177,36 @@ a:hover {
     background: var(--btn-bg-strong);
     transform: translateY(-1px);
     box-shadow: 0 10px 24px rgba(0,0,0,0.36);
+}
+
+a[id="Active"], a[id="active"], a.status-active {
+    color: #d7fdd6;
+    background: linear-gradient(180deg, var(--status-active), rgba(0,0,0,0.04));
+    border-color: rgba(72, 187, 79, 0.45);
+}
+
+a[id="Inactive"], a[id="inactive"], a.status-inactive {
+    color: #ffe4e4;
+    background: linear-gradient(180deg, var(--status-inactive), rgba(0,0,0,0.04));
+    border-color: rgba(221, 77, 77, 0.45);
+}
+
+a[id="Unknown"], a[id="unknown"], a.status-unknown {
+    color: #fff4d6;
+    background: linear-gradient(180deg, var(--status-unknown), rgba(0,0,0,0.04));
+    border-color: rgba(247, 153, 33, 0.45);
+}
+
+a[id="other"], a[id="Other"], a.status-other {
+    color: #d9e8ff;
+    background: linear-gradient(180deg, var(--status-other), rgba(0,0,0,0.04));
+    border-color: rgba(76, 132, 255, 0.45);
+}
+
+a[id="soon"], a[id="Soon"], a.status-soon {
+    color: #fff9c1;
+    background: linear-gradient(180deg, var(--status-soon), rgba(0,0,0,0.04));
+    border-color: rgba(242, 219, 87, 0.45);
 }
 
 ul,
